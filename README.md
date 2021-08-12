@@ -1,78 +1,58 @@
-# NHS Federated ML appliation
+# Android
 
-## Requisites
-  CI/CD            | Python              | Federated ML
----------          |-------------------- | -------------
-* Docker           | * Python 3.6        | * Tensorflow
+## 1. Description
 
+This is a part of UCL NHSX prject on the Android, including an package provding a series of APIs, an app for demonstrating them, and a NHSX app integrated with the package. As to the api, please see this [api document](docs/api_document.md). As to these two apps, please see this [apps document](docs/apps_document.md).  
 
-# Development 
-For using both server and client side in development run both concurrently (in different terminals).
+## 2. Files Structure
 
-## Running client
-Worklfow is the same for windows and unix
-### Install (first time) 
-1. Install node.js
-1. Install 'nodemon' globally. It is package enabling live-reload of the client server.
-    ```
-    npm install -g nodemon
-    ```
-1. Install all node dependencies
-    ```
-    cd client
-    npm install
-    ```
-### Run
-```
-cd client
-nodemon start
-```
-
-## Running server
-### Install (first time) 
-Create virtual environment and install dependencies.
-
-Install Docker on your machine
-##### Unix
-```
-python3 -m venv flaskenv
-source flaskenv/bin/activate
-pip install -r requirements.txt
-```
-##### PowerShell
-```
-py -3 -m venv flaskenv
-flaskenv\Scripts\activate
-pip install -r requirements.txt
-```
-### Run
-##### Unix 
-```
-docker-compose up
-source flaskenv/bin/activate
-export FLASK_APP=app.py
-export FLASK_ENV=development
-flask run
-```
-
-##### PowerShell
-Run `.\runApp.ps1` or:
-```
-docker-compose up
-flaskenv\Scripts\activate
-$env:FLASK_APP = "app.py"
-$env:FLASK_ENV = "development"
-flask run
+``` java
+ 📂Android                              // The root directory
+ ┣ 📂api                                // The directory for the APIs
+ ┃ ┣ 📂src
+ ┃ ┃ ┣ 📂androidTest                                 
+ ┃ ┃ ┃ ┣ 📦java.uclsse.comp0102.nhsxapp.api
+ ┃ ┃ ┃ ┗ ...
+ ┃ ┃ ┣ 📂main
+ ┃ ┃ ┃ ┣ 📦java.uclsse.comp0102.nhsxapp.api
+ ┃ ┃ ┃ ┗ 📂res
+ ┃ ┃ ┃ ┃ ┣ ...
+ ┃ ┃ ┃ ┃ ┗ 📂values
+ ┃ ┃ ┃ ┃ ┃ ┗ 📜strings.xml              // The directory for the string values used in APIs
+ ┃ ┃ ┗ ...
+ ┃ ┗ 📜build.gradle
+ ┣ 📂app                                // The directory for the demo app
+ ┃ ┣ 📂src
+ ┃ ┃ ┣ 📂androidTest
+ ┃ ┃ ┃ ┣ 📦java.uclsse.comp0102.nhsxapp.android.demo
+ ┃ ┃ ┃ ┗ ...
+ ┃ ┃ ┣ 📂main
+ ┃ ┃ ┃ ┣ 📦java.uclsse.comp0102.nhsxapp.android.demo
+ ┃ ┃ ┃ ┣ 📂res
+ ┃ ┃ ┃ ┃ ┣ ...
+ ┃ ┃ ┃ ┃ ┗ 📂values
+ ┃ ┃ ┃ ┃ ┃ ┣ ...
+ ┃ ┃ ┃ ┃ ┃ ┗ 📜strings.xml              // The directory for the string values used in the demo app
+ ┃ ┃ ┗ ...
+ ┃ ┗ 📜build.gradle
+ ┣ 📂undergrad                          // The directory for the NHSX app developed by second year students
+ ┃ ┣ 📂src
+ ┃ ┃ ┣ 📂androidTest
+ ┃ ┃ ┃ ┣ 📦java.com.uk.ac.ucl.carefulai
+ ┃ ┃ ┃ ┗ ...
+ ┃ ┃ ┣ 📂main
+ ┃ ┃ ┃ ┣ 📦java.com.uk.ac.ucl.carefulai
+ ┃ ┃ ┃ ┣ 📂res
+ ┃ ┃ ┃ ┃ ┣ ...
+ ┃ ┃ ┃ ┃ ┗ 📂values
+ ┃ ┃ ┃ ┃ ┃ ┣ ...
+ ┃ ┃ ┃ ┃ ┃ ┗ 📜strings.xml              // The directory for the string values used in the NHSX app
+ ┃ ┃ ┗ ...
+ ┃ ┗ 📜build.gradle
+ ┣ 📂gradle
+ ┣ 📜build.gradle
+ ┗ ...
 ```
 
-Once you finish working on the project, run ```docker-compose down``` to stop the Docker container with local database.
 
-## Project contributors: 
-Marta Smigielska, Davinder Bassan, Najat Baqadir, Sam Xu, Yiren Zhang, Roman Matios, Wojciech Golaszewski
-
-   iOS          | Android       | Backend
-----------------| ------------- | ------------
-Davinder Bassan | Sam Xu        | Marta Smigielska
-Najat Baqadir   | Yiren Zhang   | Wojciech Golaszewski
-|               |               | Roman Matios
 
