@@ -2,7 +2,7 @@
 
 ## 1. Description
 
-This is a part of UCL NHSX prject on the Android, including an package provding a series of APIs, an app for demonstrating them, and a NHSX app integrated with the package. As to the api, please see this [api document](docs/api_document.md). As to these two apps, please see this [apps document](docs/apps_document.md).  
+This is a part of [UCL NHSX prject](https://github.com/aunroel/nhs_app) on the Android, including an package provding a series of APIs, an app for demonstrating them, and a NHSX app integrated with the package. As to the api, please see this [api document](docs/api_document.md). As to these two apps, please see this [apps document](docs/apps_document.md).  
 
 ## 2. Files Structure
 
